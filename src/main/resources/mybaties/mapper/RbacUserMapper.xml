@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.vivebest.mapper.RbacUserMapper">
+  <resultMap id="BaseResultMap" type="com.vivebest.entity.RbacUser">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="USER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="GBK_USER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="BIG5_USER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EN_USER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="OTH_USER_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="ORG_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="USER_LEVEL" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="LOGIN_NAME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PASSWORD" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="PASSWORD_EXPIRED_DATE" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="DEFAULT_ROLE_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LAST_LOGIN_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="LOGIN_IP" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FAILED_NUMBER" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="PHONE_NUMBER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="MOBILE_PHONE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EMAIL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="REMARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="STATUS" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="EFFECTIVE_DATE" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="MATURITY_DATE" javaType="java.util.Date" jdbcType="DATE" />
+      <arg column="USER_INDEX" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="RESET_MARK" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LAST_UPDATE_ORG_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LAST_UPDATE_USER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LAST_UPDATE_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="CREATE_ORG_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATE_USER_ID" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="CREATE_TIME" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="FILLER" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LANGUAGE" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="FIRST_LOGIN" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="IMAGE_URL" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LAST_THEME" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="LAST_THEME_COLOR" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rbac_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.vivebest.entity.RbacUser">
+    insert into rbac_user (id, USER_ID, GBK_USER_NAME, 
+      BIG5_USER_NAME, EN_USER_NAME, OTH_USER_NAME, 
+      ORG_ID, USER_LEVEL, LOGIN_NAME, 
+      PASSWORD, PASSWORD_EXPIRED_DATE, DEFAULT_ROLE_ID, 
+      LAST_LOGIN_TIME, LOGIN_IP, FAILED_NUMBER, 
+      PHONE_NUMBER, MOBILE_PHONE, EMAIL, 
+      REMARK, STATUS, EFFECTIVE_DATE, 
+      MATURITY_DATE, USER_INDEX, RESET_MARK, 
+      LAST_UPDATE_ORG_ID, LAST_UPDATE_USER_ID, LAST_UPDATE_TIME, 
+      CREATE_ORG_ID, CREATE_USER_ID, CREATE_TIME, 
+      FILLER, LANGUAGE, FIRST_LOGIN, 
+      IMAGE_URL, LAST_THEME, LAST_THEME_COLOR
+      )
+    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=VARCHAR}, #{gbkUserName,jdbcType=VARCHAR}, 
+      #{big5UserName,jdbcType=VARCHAR}, #{enUserName,jdbcType=VARCHAR}, #{othUserName,jdbcType=VARCHAR}, 
+      #{orgId,jdbcType=VARCHAR}, #{userLevel,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{passwordExpiredDate,jdbcType=DATE}, #{defaultRoleId,jdbcType=VARCHAR}, 
+      #{lastLoginTime,jdbcType=TIMESTAMP}, #{loginIp,jdbcType=VARCHAR}, #{failedNumber,jdbcType=INTEGER}, 
+      #{phoneNumber,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{remark,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{effectiveDate,jdbcType=DATE}, 
+      #{maturityDate,jdbcType=DATE}, #{userIndex,jdbcType=INTEGER}, #{resetMark,jdbcType=VARCHAR}, 
+      #{lastUpdateOrgId,jdbcType=VARCHAR}, #{lastUpdateUserId,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{createOrgId,jdbcType=VARCHAR}, #{createUserId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{filler,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, #{firstLogin,jdbcType=INTEGER}, 
+      #{imageUrl,jdbcType=VARCHAR}, #{lastTheme,jdbcType=VARCHAR}, #{lastThemeColor,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.vivebest.entity.RbacUser">
+    update rbac_user
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+      GBK_USER_NAME = #{gbkUserName,jdbcType=VARCHAR},
+      BIG5_USER_NAME = #{big5UserName,jdbcType=VARCHAR},
+      EN_USER_NAME = #{enUserName,jdbcType=VARCHAR},
+      OTH_USER_NAME = #{othUserName,jdbcType=VARCHAR},
+      ORG_ID = #{orgId,jdbcType=VARCHAR},
+      USER_LEVEL = #{userLevel,jdbcType=INTEGER},
+      LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      PASSWORD_EXPIRED_DATE = #{passwordExpiredDate,jdbcType=DATE},
+      DEFAULT_ROLE_ID = #{defaultRoleId,jdbcType=VARCHAR},
+      LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+      LOGIN_IP = #{loginIp,jdbcType=VARCHAR},
+      FAILED_NUMBER = #{failedNumber,jdbcType=INTEGER},
+      PHONE_NUMBER = #{phoneNumber,jdbcType=VARCHAR},
+      MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+      EMAIL = #{email,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=VARCHAR},
+      EFFECTIVE_DATE = #{effectiveDate,jdbcType=DATE},
+      MATURITY_DATE = #{maturityDate,jdbcType=DATE},
+      USER_INDEX = #{userIndex,jdbcType=INTEGER},
+      RESET_MARK = #{resetMark,jdbcType=VARCHAR},
+      LAST_UPDATE_ORG_ID = #{lastUpdateOrgId,jdbcType=VARCHAR},
+      LAST_UPDATE_USER_ID = #{lastUpdateUserId,jdbcType=VARCHAR},
+      LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      CREATE_ORG_ID = #{createOrgId,jdbcType=VARCHAR},
+      CREATE_USER_ID = #{createUserId,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      FILLER = #{filler,jdbcType=VARCHAR},
+      LANGUAGE = #{language,jdbcType=VARCHAR},
+      FIRST_LOGIN = #{firstLogin,jdbcType=INTEGER},
+      IMAGE_URL = #{imageUrl,jdbcType=VARCHAR},
+      LAST_THEME = #{lastTheme,jdbcType=VARCHAR},
+      LAST_THEME_COLOR = #{lastThemeColor,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, USER_ID, GBK_USER_NAME, BIG5_USER_NAME, EN_USER_NAME, OTH_USER_NAME, ORG_ID, 
+    USER_LEVEL, LOGIN_NAME, PASSWORD, PASSWORD_EXPIRED_DATE, DEFAULT_ROLE_ID, LAST_LOGIN_TIME, 
+    LOGIN_IP, FAILED_NUMBER, PHONE_NUMBER, MOBILE_PHONE, EMAIL, REMARK, STATUS, EFFECTIVE_DATE, 
+    MATURITY_DATE, USER_INDEX, RESET_MARK, LAST_UPDATE_ORG_ID, LAST_UPDATE_USER_ID, LAST_UPDATE_TIME, 
+    CREATE_ORG_ID, CREATE_USER_ID, CREATE_TIME, FILLER, LANGUAGE, FIRST_LOGIN, IMAGE_URL, 
+    LAST_THEME, LAST_THEME_COLOR
+    from rbac_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, USER_ID, GBK_USER_NAME, BIG5_USER_NAME, EN_USER_NAME, OTH_USER_NAME, ORG_ID, 
+    USER_LEVEL, LOGIN_NAME, PASSWORD, PASSWORD_EXPIRED_DATE, DEFAULT_ROLE_ID, LAST_LOGIN_TIME, 
+    LOGIN_IP, FAILED_NUMBER, PHONE_NUMBER, MOBILE_PHONE, EMAIL, REMARK, STATUS, EFFECTIVE_DATE, 
+    MATURITY_DATE, USER_INDEX, RESET_MARK, LAST_UPDATE_ORG_ID, LAST_UPDATE_USER_ID, LAST_UPDATE_TIME, 
+    CREATE_ORG_ID, CREATE_USER_ID, CREATE_TIME, FILLER, LANGUAGE, FIRST_LOGIN, IMAGE_URL, 
+    LAST_THEME, LAST_THEME_COLOR
+    from rbac_user
+  </select>
+
+  <select id="queryRbacUser" resultMap="BaseResultMap">
+    select id, USER_ID, GBK_USER_NAME, BIG5_USER_NAME, EN_USER_NAME, OTH_USER_NAME, ORG_ID,
+    USER_LEVEL, LOGIN_NAME, PASSWORD, PASSWORD_EXPIRED_DATE, DEFAULT_ROLE_ID, LAST_LOGIN_TIME,
+    LOGIN_IP, FAILED_NUMBER, PHONE_NUMBER, MOBILE_PHONE, EMAIL, REMARK, STATUS, EFFECTIVE_DATE,
+    MATURITY_DATE, USER_INDEX, RESET_MARK, LAST_UPDATE_ORG_ID, LAST_UPDATE_USER_ID, LAST_UPDATE_TIME,
+    CREATE_ORG_ID, CREATE_USER_ID, CREATE_TIME, FILLER, LANGUAGE, FIRST_LOGIN, IMAGE_URL,
+    LAST_THEME, LAST_THEME_COLOR
+    from rbac_user
+  </select>
+
+  <update id="updateRbacUser" parameterType="com.vivebest.entity.RbacUser">
+    update rbac_user
+    set USER_ID = #{userId,jdbcType=VARCHAR},
+    GBK_USER_NAME = #{gbkUserName,jdbcType=VARCHAR},
+    BIG5_USER_NAME = #{big5UserName,jdbcType=VARCHAR},
+    EN_USER_NAME = #{enUserName,jdbcType=VARCHAR},
+    OTH_USER_NAME = #{othUserName,jdbcType=VARCHAR},
+    ORG_ID = #{orgId,jdbcType=VARCHAR},
+    USER_LEVEL = #{userLevel,jdbcType=INTEGER},
+    LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
+    PASSWORD = #{password,jdbcType=VARCHAR},
+    PASSWORD_EXPIRED_DATE = #{passwordExpiredDate,jdbcType=DATE},
+    DEFAULT_ROLE_ID = #{defaultRoleId,jdbcType=VARCHAR},
+    LAST_LOGIN_TIME = #{lastLoginTime,jdbcType=TIMESTAMP},
+    LOGIN_IP = #{loginIp,jdbcType=VARCHAR},
+    FAILED_NUMBER = #{failedNumber,jdbcType=INTEGER},
+    PHONE_NUMBER = #{phoneNumber,jdbcType=VARCHAR},
+    MOBILE_PHONE = #{mobilePhone,jdbcType=VARCHAR},
+    EMAIL = #{email,jdbcType=VARCHAR},
+    REMARK = #{remark,jdbcType=VARCHAR},
+    STATUS = #{status,jdbcType=VARCHAR},
+    EFFECTIVE_DATE = #{effectiveDate,jdbcType=DATE},
+    MATURITY_DATE = #{maturityDate,jdbcType=DATE},
+    USER_INDEX = #{userIndex,jdbcType=INTEGER},
+    RESET_MARK = #{resetMark,jdbcType=VARCHAR},
+    LAST_UPDATE_ORG_ID = #{lastUpdateOrgId,jdbcType=VARCHAR},
+    LAST_UPDATE_USER_ID = #{lastUpdateUserId,jdbcType=VARCHAR},
+    LAST_UPDATE_TIME = #{lastUpdateTime,jdbcType=TIMESTAMP},
+    CREATE_ORG_ID = #{createOrgId,jdbcType=VARCHAR},
+    CREATE_USER_ID = #{createUserId,jdbcType=VARCHAR},
+    CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+    FILLER = #{filler,jdbcType=VARCHAR},
+    LANGUAGE = #{language,jdbcType=VARCHAR},
+    FIRST_LOGIN = #{firstLogin,jdbcType=INTEGER},
+    IMAGE_URL = #{imageUrl,jdbcType=VARCHAR},
+    LAST_THEME = #{lastTheme,jdbcType=VARCHAR},
+    LAST_THEME_COLOR = #{lastThemeColor,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <delete id="delRbacUser" parameterType="java.lang.Integer">
+    delete from rbac_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+</mapper>

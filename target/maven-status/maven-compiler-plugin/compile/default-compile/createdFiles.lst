@@ -1,0 +1,6 @@
+com\vivebest\mapper\RbacUserMapper.class
+com\vivebest\service\impl\RbacUserServiceImpl.class
+com\vivebest\service\IRbacUserService.class
+com\vivebest\controller\RbacUserController.class
+com\vivebest\GeneratorCodeApplication.class
+com\vivebest\entity\RbacUser.class
