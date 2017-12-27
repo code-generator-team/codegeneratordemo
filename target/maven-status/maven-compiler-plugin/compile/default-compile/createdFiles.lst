@@ -1,6 +1,11 @@
 com\vivebest\mapper\RbacUserMapper.class
 com\vivebest\service\impl\RbacUserServiceImpl.class
+com\vivebest\common\utils\ResposeUtil.class
 com\vivebest\service\IRbacUserService.class
-com\vivebest\controller\RbacUserController.class
+com\vivebest\entity\base\ResponseData.class
 com\vivebest\GeneratorCodeApplication.class
+com\vivebest\controller\AccessRequestController.class
+com\vivebest\common\msg\MsgContents.class
+com\vivebest\controller\RbacUserController.class
+com\vivebest\entity\base\HttpContentRequest.class
 com\vivebest\entity\RbacUser.class

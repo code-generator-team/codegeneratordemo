@@ -28,4 +28,24 @@ public class MsgContents {
      * 失败信息描述
      */
     public static final String  FAIL_DESC = "失败";
+
+    /**
+     * Get请求方式
+     */
+    public static final String HTTP_GET = "get";
+
+    /**
+     * POST请求方式
+     */
+    public static final String HTTP_POST = "post";
+
+    /**
+     * PUT请求方式
+     */
+    public static final String HTTP_PUT = "put";
+
+    /**
+     * DELETE请求方式
+     */
+    public static final String HTTP_DELETE= "delete";
 }

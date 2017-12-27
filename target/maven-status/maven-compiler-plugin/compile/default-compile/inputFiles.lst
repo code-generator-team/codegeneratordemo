@@ -1,7 +1,12 @@
 C:\generator-code\src\main\java\com\vivebest\GeneratorCodeApplication.java
 C:\generator-code\src\main\java\com\vivebest\service\package-info.java
 C:\generator-code\src\main\java\com\vivebest\service\IRbacUserService.java
+C:\generator-code\src\main\java\com\vivebest\controller\AccessRequestController.java
+C:\generator-code\src\main\java\com\vivebest\common\msg\MsgContents.java
+C:\generator-code\src\main\java\com\vivebest\entity\base\ResponseData.java
 C:\generator-code\src\main\java\com\vivebest\service\impl\RbacUserServiceImpl.java
+C:\generator-code\src\main\java\com\vivebest\entity\base\HttpContentRequest.java
 C:\generator-code\src\main\java\com\vivebest\entity\RbacUser.java
+C:\generator-code\src\main\java\com\vivebest\common\utils\ResposeUtil.java
 C:\generator-code\src\main\java\com\vivebest\controller\RbacUserController.java
 C:\generator-code\src\main\java\com\vivebest\mapper\RbacUserMapper.java
