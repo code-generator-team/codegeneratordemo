@@ -20,6 +20,7 @@ public class RbacUserController {
     @Resource(name="rbacUserServiceImpl")
     private IRbacUserService iRbacUserService;
 
+
     @RequestMapping(value = "/rbacUsers", method = RequestMethod.GET)
     public Object queryRbacUser(){
         return ResposeUtil.putResponseDate(iRbacUserService.queryRbacUser());
